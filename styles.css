@@ -1,0 +1,44 @@
+/*Had I only given a class 'table' for the table, I would have accessed td of tbody as .table tbody td*/
+#tbody {
+    font-family: Verdana, Arial, sans-serif;
+}
+
+#tbody td {
+    padding: 6px;
+    border-bottom: 1px solid gray;
+}
+
+#thead th {
+    padding: 12px 0px 12px 6px;
+    background-color: #b7d0ff;
+    font-weight: bold;
+    border-bottom: 2px solid gray;
+}
+
+#table {
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: left;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.center {
+    margin: auto;
+    padding: 60px;
+    width: 60%;
+    text-align: center;
+}
+
+.center h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}

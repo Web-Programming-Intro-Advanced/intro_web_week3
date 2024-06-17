@@ -1,5 +1,5 @@
 /*Had I only given a class 'table' for the table, I would have accessed td of tbody as .table tbody td*/
-#tbody {
+body {
     font-family: Verdana, Arial, sans-serif;
 }
 

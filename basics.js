@@ -4,8 +4,11 @@ let tbody = document.getElementById('tbody');
 let thRow = document.getElementById('thRow'); // if I create a new tr, employment will be added in new line
 
 let Employment = document.createElement('th')
+let EmploymentPercent = document.createElement('th')
 Employment.innerText = 'Employment amount'
+EmploymentPercent.innerText = 'Employment-%'
 thRow.appendChild(Employment);
+thRow.appendChild(EmploymentPercent)
 thead.appendChild(thRow)
 
 let list = []
@@ -40,14 +43,29 @@ async function populateTable(){
         let td1 = document.createElement('td');
         let td2 = document.createElement('td');
         let td3 = document.createElement('td');
+        let td4 = document.createElement('td');
         td1.innerText = triple[0];
         td2.innerText = triple[1];
         td3.innerText = triple[2];
+        td4.innerText = calculatePercentage(triple[2], triple[1]) + '%';
         tr.appendChild(td1);
         tr.appendChild(td2);
         tr.appendChild(td3);
+        tr.appendChild(td4);
         tbody.appendChild(tr);
-    })
+
+        if (parseFloat(td4.innerText) > 45){
+            tr.style.backgroundColor = '#abffbd';
+        }
+        else if (parseFloat(td4.innerText) < 25){
+            tr.style.backgroundColor = '#ff9e9e';
+        }
+    });
+}
+
+function calculatePercentage(data1, data2){
+    let percentage = (100 * data1/data2).toFixed(2);
+    return percentage;
 }
 
 populateTable();
